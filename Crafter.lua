@@ -526,7 +526,6 @@ function DolgubonSetCrafter.initializeFunctions.initializeCrafting()
 end
 
 
-
 local function findPatternName(patternIndex, station)
 	local weight
 	local patternName
@@ -547,37 +546,7 @@ local function findPatternName(patternIndex, station)
 			 
 	local patternNames = DolgubonSetCrafter.localizedStrings.patternNames[station]
 	assert(patternIndex >= 1 and patternIndex <= #patternNames)
-	
-	--D(string.format("findPatternName(): station: %d, pattern: [%d, %s]", station, patternIndex, patternNames[patternIndex]))
-	
 	return patternNames[patternIndex], weight, 1
-	
-	--[[
-	if weight ~= "" then
-		if station == CRAFTING_TYPE_CLOTHIER then
-			if pattern == 2 then
-				patternName = DolgubonSetCrafter.localizedStrings.pieceNames[8]
-			elseif pattern == 1 then
-				patternName = DolgubonSetCrafter.localizedStrings.pieceNames[1]
-			else
-				patternName = DolgubonSetCrafter.localizedStrings.pieceNames[(pattern - 1)%7]
-			end
-		elseif station == CRAFTING_TYPE_BLACKSMITHING then
-			patternName = DolgubonSetCrafter.localizedStrings.pieceNames[pattern%7]
-		end
-	elseif station == CRAFTING_TYPE_WOODWORKING then
-		if pattern == 2 then
-			patternName = DolgubonSetCrafter.localizedStrings.weaponNames [13]
-		elseif pattern == 1 then
-			patternName = DolgubonSetCrafter.localizedStrings.weaponNames [8]
-		else
-			patternName = DolgubonSetCrafter.localizedStrings.weaponNames [pattern + 6]
-		end
-	else
-		patternName = DolgubonSetCrafter.localizedStrings.weaponNames[pattern]
-	end
-	return patternName, weight,1
-	]]
 end
 
 
